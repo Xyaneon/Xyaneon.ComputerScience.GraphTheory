@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Copyright>Copyright © Christopher Kyle Horton 2018</Copyright>
+    <PackageLicenseUrl>https://github.com/Xyaneon/Xyaneon.ComputerScience.GraphTheory/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Xyaneon/Xyaneon.ComputerScience.GraphTheory</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Xyaneon/Xyaneon.ComputerScience.GraphTheory</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Authors>Christopher Kyle Horton</Authors>
+    <Company>Christopher Kyle Horton</Company>
+    <Description>A .NET Standard library which provides classes for working with vertices, edges and graphs.</Description>
+    <PackageTags>graph graph-theory vertex edge directed undirected computer science</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

@@ -3,9 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyaneon.ComputerScience.GraphTheory", "Xyaneon.ComputerScience.GraphTheory\Xyaneon.ComputerScience.GraphTheory.csproj", "{56C37197-CE79-4454-81A2-90476B1F2955}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xyaneon.ComputerScience.GraphTheory", "Xyaneon.ComputerScience.GraphTheory\Xyaneon.ComputerScience.GraphTheory.csproj", "{56C37197-CE79-4454-81A2-90476B1F2955}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyaneon.ComputerScience.GraphTheory.Test", "Xyaneon.ComputerScience.GraphTheory.Test\Xyaneon.ComputerScience.GraphTheory.Test.csproj", "{58BC7BA4-2DFA-45B1-8501-2A035240F180}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xyaneon.ComputerScience.GraphTheory.Test", "Xyaneon.ComputerScience.GraphTheory.Test\Xyaneon.ComputerScience.GraphTheory.Test.csproj", "{58BC7BA4-2DFA-45B1-8501-2A035240F180}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DA003FCF-7107-454A-8AA0-35C18A333BB2}"
+	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.md = CHANGELOG.md
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
