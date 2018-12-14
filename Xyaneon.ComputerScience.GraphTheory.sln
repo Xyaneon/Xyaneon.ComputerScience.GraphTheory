@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyaneon.ComputerScience.GraphTheory", "Xyaneon.ComputerScience.GraphTheory\Xyaneon.ComputerScience.GraphTheory.csproj", "{56C37197-CE79-4454-81A2-90476B1F2955}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xyaneon.ComputerScience.GraphTheory.Test", "Xyaneon.ComputerScience.GraphTheory.Test\Xyaneon.ComputerScience.GraphTheory.Test.csproj", "{58BC7BA4-2DFA-45B1-8501-2A035240F180}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{56C37197-CE79-4454-81A2-90476B1F2955}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56C37197-CE79-4454-81A2-90476B1F2955}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56C37197-CE79-4454-81A2-90476B1F2955}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58BC7BA4-2DFA-45B1-8501-2A035240F180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58BC7BA4-2DFA-45B1-8501-2A035240F180}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58BC7BA4-2DFA-45B1-8501-2A035240F180}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58BC7BA4-2DFA-45B1-8501-2A035240F180}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
