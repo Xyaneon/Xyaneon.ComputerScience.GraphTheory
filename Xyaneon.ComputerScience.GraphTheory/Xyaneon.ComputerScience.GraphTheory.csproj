@@ -11,6 +11,9 @@
     <Company>Christopher Kyle Horton</Company>
     <Description>A .NET Standard library which provides classes for working with vertices, edges and graphs.</Description>
     <PackageTags>graph graph-theory vertex edge directed undirected computer science</PackageTags>
+    <PackageReleaseNotes>## 1.0.0 - 2018-12-14
+### Added
+- Initial code.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
