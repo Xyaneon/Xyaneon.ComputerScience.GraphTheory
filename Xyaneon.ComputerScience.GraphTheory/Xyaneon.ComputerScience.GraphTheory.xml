@@ -132,7 +132,7 @@
         </member>
         <member name="M:Xyaneon.ComputerScience.GraphTheory.DirectedGraph`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEnumerable{Xyaneon.ComputerScience.GraphTheory.Vertex})">
             <summary>
-            Initializes a new instance of the <see cref="!:DirectedGraph"/> class
+            Initializes a new instance of the <see cref="T:Xyaneon.ComputerScience.GraphTheory.DirectedGraph`1"/> class
             using the provided collections of edges and vertices.
             </summary>
             <param name="edges">
@@ -147,7 +147,7 @@
             <paramref name="vertices"/> is <see langword="null"/>.
             </exception>
             <exception cref="T:System.ArgumentException">
-            <paramref name="edges"/> contains an <see cref="!:TEdge"/>
+            <paramref name="edges"/> contains an edge
             which has a <see cref="T:Xyaneon.ComputerScience.GraphTheory.Vertex"/> which is not in <paramref name="vertices"/>.
             </exception>
         </member>
@@ -166,7 +166,7 @@
             Adds the provided <paramref name="edge"/> to this graph.
             </summary>
             <param name="edge">
-            The <see cref="!:TEdge"/> to add.
+            The edge to add.
             </param>
             <exception cref="T:System.ArgumentNullException">
             <paramref name="edge"/> is <see langword="null"/>.
@@ -177,7 +177,7 @@
             <paramref name="edge"/> has a vertex which is not in this
             graph.
             -or-
-            An <see cref="!:TEdge"/> is already in
+            An edge is already in
             this graph which has the same vertices as
             <paramref name="edge"/>.
             </exception>
@@ -269,7 +269,7 @@
             The destination <see cref="T:Xyaneon.ComputerScience.GraphTheory.Vertex"/> of the requested edge.
             </param>
             <returns>
-            The <see cref="!:TEdge"/> stored in this graph with
+            The edge stored in this graph with
             the requested vertices, if it exists; otherwise,
             <see langword="null"/>.
             </returns>
@@ -290,7 +290,7 @@
             The destination vertex label of the requested edge.
             </param>
             <returns>
-            The <see cref="!:TEdge"/> stored in this graph with
+            The edge stored in this graph with
             the requested vertex labels, if it exists; otherwise,
             <see langword="null"/>.
             </returns>
@@ -553,7 +553,7 @@
         </member>
         <member name="M:Xyaneon.ComputerScience.GraphTheory.UndirectedGraph`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEnumerable{Xyaneon.ComputerScience.GraphTheory.Vertex})">
             <summary>
-            Initializes a new instance of the <see cref="!:UndirectedGraph"/> class
+            Initializes a new instance of the <see cref="T:Xyaneon.ComputerScience.GraphTheory.UndirectedGraph`1"/> class
             using the provided collections of edges and vertices.
             </summary>
             <param name="edges">
@@ -568,7 +568,7 @@
             <paramref name="vertices"/> is <see langword="null"/>.
             </exception>
             <exception cref="T:System.ArgumentException">
-            <paramref name="edges"/> contains an <see cref="!:TEdge"/>
+            <paramref name="edges"/> contains an edge
             which has a <see cref="T:Xyaneon.ComputerScience.GraphTheory.Vertex"/> which is not in <paramref name="vertices"/>.
             </exception>
         </member>
@@ -587,7 +587,7 @@
             Adds the provided <paramref name="edge"/> to this graph.
             </summary>
             <param name="edge">
-            The <see cref="!:TEdge"/> to add.
+            The edge to add.
             </param>
             <exception cref="T:System.ArgumentNullException">
             <paramref name="edge"/> is <see langword="null"/>.
@@ -598,7 +598,7 @@
             <paramref name="edge"/> has a vertex which is not in this
             graph.
             -or-
-            An <see cref="!:TEdge"/> is already in
+            An edge is already in
             this graph which has the same vertices as
             <paramref name="edge"/>.
             </exception>
@@ -690,7 +690,7 @@
             The second <see cref="T:Xyaneon.ComputerScience.GraphTheory.Vertex"/> of the requested edge.
             </param>
             <returns>
-            The <see cref="!:TEdge"/> stored in this graph with
+            The edge stored in this graph with
             the requested vertices, if it exists; otherwise,
             <see langword="null"/>.
             </returns>
@@ -711,7 +711,7 @@
             The second vertex label of the requested edge.
             </param>
             <returns>
-            The <see cref="!:TEdge"/> stored in this graph with
+            The edge stored in this graph with
             the requested vertex labels, if it exists; otherwise,
             <see langword="null"/>.
             </returns>

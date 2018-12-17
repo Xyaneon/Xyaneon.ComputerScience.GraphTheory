@@ -17,7 +17,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UndirectedGraph"/> class
+        /// Initializes a new instance of the <see cref="UndirectedGraph{TEdge}"/> class
         /// using the provided collections of edges and vertices.
         /// </summary>
         /// <param name="edges">
@@ -32,7 +32,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
         /// <paramref name="vertices"/> is <see langword="null"/>.
         /// </exception>
         /// <exception cref="ArgumentException">
-        /// <paramref name="edges"/> contains an <see cref="TEdge"/>
+        /// <paramref name="edges"/> contains an edge
         /// which has a <see cref="Vertex"/> which is not in <paramref name="vertices"/>.
         /// </exception>
         public UndirectedGraph(IEnumerable<TEdge> edges, IEnumerable<Vertex> vertices)
@@ -103,7 +103,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
         /// Adds the provided <paramref name="edge"/> to this graph.
         /// </summary>
         /// <param name="edge">
-        /// The <see cref="TEdge"/> to add.
+        /// The edge to add.
         /// </param>
         /// <exception cref="ArgumentNullException">
         /// <paramref name="edge"/> is <see langword="null"/>.
@@ -114,7 +114,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
         /// <paramref name="edge"/> has a vertex which is not in this
         /// graph.
         /// -or-
-        /// An <see cref="TEdge"/> is already in
+        /// An edge is already in
         /// this graph which has the same vertices as
         /// <paramref name="edge"/>.
         /// </exception>
@@ -318,7 +318,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
         /// The second <see cref="Vertex"/> of the requested edge.
         /// </param>
         /// <returns>
-        /// The <see cref="TEdge"/> stored in this graph with
+        /// The edge stored in this graph with
         /// the requested vertices, if it exists; otherwise,
         /// <see langword="null"/>.
         /// </returns>
@@ -353,7 +353,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
         /// The second vertex label of the requested edge.
         /// </param>
         /// <returns>
-        /// The <see cref="TEdge"/> stored in this graph with
+        /// The edge stored in this graph with
         /// the requested vertex labels, if it exists; otherwise,
         /// <see langword="null"/>.
         /// </returns>
