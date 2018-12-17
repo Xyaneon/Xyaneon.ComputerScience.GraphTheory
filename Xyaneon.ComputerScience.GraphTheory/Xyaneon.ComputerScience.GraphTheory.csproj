@@ -11,9 +11,20 @@
     <Company>Christopher Kyle Horton</Company>
     <Description>A .NET Standard library which provides classes for working with vertices, edges and graphs.</Description>
     <PackageTags>graph graph-theory vertex edge directed undirected computer science</PackageTags>
-    <PackageReleaseNotes>## 1.0.0 - 2018-12-14
+    <PackageReleaseNotes>## 1.1.0 - 2018-12-17
 ### Added
-- Initial code.</PackageReleaseNotes>
+- Added the GraphCalculations static class.
+- Added the IsCompleteGraph property to graph classes.
+
+### Changed
+- An InvalidOperationException is now thrown when an attempt is made to add an
+  edge to a complete graph.
+
+### Fixed
+-  XML documentation comment fixes.</PackageReleaseNotes>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

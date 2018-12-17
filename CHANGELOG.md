@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.1.0] - 2018-12-17
 ### Added
 - Added the GraphCalculations static class.
 - Added the IsCompleteGraph property to graph classes.
@@ -20,5 +22,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial code.
 
-[Unreleased]: https://github.com/Xyaneon/Xyaneon.ComputerScience.GraphTheory/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/Xyaneon/Xyaneon.ComputerScience.GraphTheory/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/Xyaneon/Xyaneon.ComputerScience.GraphTheory/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Xyaneon/Xyaneon.ComputerScience.GraphTheory/compare/59c07192b4dc956019348bf39968a22521e2616c...v1.0.0
