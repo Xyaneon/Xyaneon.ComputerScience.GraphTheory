@@ -187,6 +187,10 @@
             this graph which has the same vertices as
             <paramref name="edge"/>.
             </exception>
+            <exception cref="T:System.InvalidOperationException">
+            This graph is already complete, as indicated by the value of the
+            <see cref="P:Xyaneon.ComputerScience.GraphTheory.DirectedGraph`1.IsCompleteGraph"/> property.
+            </exception>
         </member>
         <member name="M:Xyaneon.ComputerScience.GraphTheory.DirectedGraph`1.AddVertex(Xyaneon.ComputerScience.GraphTheory.Vertex)">
             <summary>
@@ -653,6 +657,10 @@
             An edge is already in
             this graph which has the same vertices as
             <paramref name="edge"/>.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            This graph is already complete, as indicated by the value of the
+            <see cref="P:Xyaneon.ComputerScience.GraphTheory.UndirectedGraph`1.IsCompleteGraph"/> property.
             </exception>
         </member>
         <member name="M:Xyaneon.ComputerScience.GraphTheory.UndirectedGraph`1.AddVertex(Xyaneon.ComputerScience.GraphTheory.Vertex)">
