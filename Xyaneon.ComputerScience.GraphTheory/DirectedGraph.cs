@@ -81,6 +81,15 @@ namespace Xyaneon.ComputerScience.GraphTheory
         }
 
         /// <summary>
+        /// Gets a value indicating whether this is a complete graph.
+        /// </summary>
+        /// <seealso cref="GraphCalculations.CalculateNumberOfEdgesInCompleteDirectedGraph(int)"/>
+        public bool IsCompleteGraph
+        {
+            get => GraphCalculations.CalculateNumberOfEdgesInCompleteDirectedGraph(Vertices.Count) == Edges.Count;
+        }
+
+        /// <summary>
         /// Gets the read-only collection of vertices in this graph.
         /// </summary>
         public IReadOnlyCollection<Vertex> Vertices

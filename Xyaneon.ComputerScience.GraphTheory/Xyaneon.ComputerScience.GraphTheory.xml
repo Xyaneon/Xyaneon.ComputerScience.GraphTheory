@@ -156,6 +156,12 @@
             Gets the read-only collection of edges in this graph.
             </summary>
         </member>
+        <member name="P:Xyaneon.ComputerScience.GraphTheory.DirectedGraph`1.IsCompleteGraph">
+            <summary>
+            Gets a value indicating whether this is a complete graph.
+            </summary>
+            <seealso cref="M:Xyaneon.ComputerScience.GraphTheory.GraphCalculations.CalculateNumberOfEdgesInCompleteDirectedGraph(System.Int32)"/>
+        </member>
         <member name="P:Xyaneon.ComputerScience.GraphTheory.DirectedGraph`1.Vertices">
             <summary>
             Gets the read-only collection of vertices in this graph.
@@ -616,6 +622,12 @@
             <summary>
             Gets the read-only collection of edges in this graph.
             </summary>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.GraphTheory.UndirectedGraph`1.IsCompleteGraph">
+            <summary>
+            Gets a value indicating whether this is a complete graph.
+            </summary>
+            <seealso cref="M:Xyaneon.ComputerScience.GraphTheory.GraphCalculations.CalculateNumberOfEdgesInCompleteUndirectedGraph(System.Int32)"/>
         </member>
         <member name="P:Xyaneon.ComputerScience.GraphTheory.UndirectedGraph`1.Vertices">
             <summary>
