@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Added the GraphCalculations static class.
+- Added the IsCompleteGraph property to graph classes.
+
+### Changed
+- An InvalidOperationException is now thrown when an attempt is made to add an
+  edge to a complete graph.
+
 ### Fixed
 -  XML documentation comment fixes.
 
