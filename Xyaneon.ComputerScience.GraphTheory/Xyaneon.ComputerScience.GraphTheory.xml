@@ -156,6 +156,12 @@
             Gets the read-only collection of edges in this graph.
             </summary>
         </member>
+        <member name="P:Xyaneon.ComputerScience.GraphTheory.DirectedGraph`1.IsCompleteGraph">
+            <summary>
+            Gets a value indicating whether this is a complete graph.
+            </summary>
+            <seealso cref="M:Xyaneon.ComputerScience.GraphTheory.GraphCalculations.CalculateNumberOfEdgesInCompleteDirectedGraph(System.Int32)"/>
+        </member>
         <member name="P:Xyaneon.ComputerScience.GraphTheory.DirectedGraph`1.Vertices">
             <summary>
             Gets the read-only collection of vertices in this graph.
@@ -180,6 +186,10 @@
             An edge is already in
             this graph which has the same vertices as
             <paramref name="edge"/>.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            This graph is already complete, as indicated by the value of the
+            <see cref="P:Xyaneon.ComputerScience.GraphTheory.DirectedGraph`1.IsCompleteGraph"/> property.
             </exception>
         </member>
         <member name="M:Xyaneon.ComputerScience.GraphTheory.DirectedGraph`1.AddVertex(Xyaneon.ComputerScience.GraphTheory.Vertex)">
@@ -416,6 +426,46 @@
             <paramref name="edge2"/>; otherwise, <see langword="false"/>.
             </returns>
         </member>
+        <member name="T:Xyaneon.ComputerScience.GraphTheory.GraphCalculations">
+            <summary>
+            Provides functionality for performing some common calculations
+            relating to graphs.
+            </summary>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.GraphTheory.GraphCalculations.CalculateNumberOfEdgesInCompleteDirectedGraph(System.Int32)">
+            <summary>
+            Calculates the number of edges which would be present in a complete
+            directed graph containing the provided number of vertices.
+            </summary>
+            <param name="numberOfVertices">
+            The number of vertices in the complete graph.
+            </param>
+            <returns>
+            The number of edges which would be present in a complete
+            directed graph containing the provided number of vertices.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="numberOfVertices"/> is less than zero.
+            </exception>
+            <seealso cref="M:Xyaneon.ComputerScience.GraphTheory.GraphCalculations.CalculateNumberOfEdgesInCompleteUndirectedGraph(System.Int32)"/>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.GraphTheory.GraphCalculations.CalculateNumberOfEdgesInCompleteUndirectedGraph(System.Int32)">
+            <summary>
+            Calculates the number of edges which would be present in a complete
+            undirected graph containing the provided number of vertices.
+            </summary>
+            <param name="numberOfVertices">
+            The number of vertices in the complete graph.
+            </param>
+            <returns>
+            The number of edges which would be present in a complete
+            undirected graph containing the provided number of vertices.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="numberOfVertices"/> is less than zero.
+            </exception>
+            <seealso cref="M:Xyaneon.ComputerScience.GraphTheory.GraphCalculations.CalculateNumberOfEdgesInCompleteDirectedGraph(System.Int32)"/>
+        </member>
         <member name="T:Xyaneon.ComputerScience.GraphTheory.IWeighted">
             <summary>
             Exposes properties on classes which have an associated weight.
@@ -577,6 +627,12 @@
             Gets the read-only collection of edges in this graph.
             </summary>
         </member>
+        <member name="P:Xyaneon.ComputerScience.GraphTheory.UndirectedGraph`1.IsCompleteGraph">
+            <summary>
+            Gets a value indicating whether this is a complete graph.
+            </summary>
+            <seealso cref="M:Xyaneon.ComputerScience.GraphTheory.GraphCalculations.CalculateNumberOfEdgesInCompleteUndirectedGraph(System.Int32)"/>
+        </member>
         <member name="P:Xyaneon.ComputerScience.GraphTheory.UndirectedGraph`1.Vertices">
             <summary>
             Gets the read-only collection of vertices in this graph.
@@ -601,6 +657,10 @@
             An edge is already in
             this graph which has the same vertices as
             <paramref name="edge"/>.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            This graph is already complete, as indicated by the value of the
+            <see cref="P:Xyaneon.ComputerScience.GraphTheory.UndirectedGraph`1.IsCompleteGraph"/> property.
             </exception>
         </member>
         <member name="M:Xyaneon.ComputerScience.GraphTheory.UndirectedGraph`1.AddVertex(Xyaneon.ComputerScience.GraphTheory.Vertex)">

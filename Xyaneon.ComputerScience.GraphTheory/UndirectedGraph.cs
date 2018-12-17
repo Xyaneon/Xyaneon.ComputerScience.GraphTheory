@@ -81,6 +81,15 @@ namespace Xyaneon.ComputerScience.GraphTheory
         }
 
         /// <summary>
+        /// Gets a value indicating whether this is a complete graph.
+        /// </summary>
+        /// <seealso cref="GraphCalculations.CalculateNumberOfEdgesInCompleteUndirectedGraph(int)"/>
+        public bool IsCompleteGraph
+        {
+            get => GraphCalculations.CalculateNumberOfEdgesInCompleteUndirectedGraph(Vertices.Count) == Edges.Count;
+        }
+
+        /// <summary>
         /// Gets the read-only collection of vertices in this graph.
         /// </summary>
         public IReadOnlyCollection<Vertex> Vertices
@@ -118,11 +127,20 @@ namespace Xyaneon.ComputerScience.GraphTheory
         /// this graph which has the same vertices as
         /// <paramref name="edge"/>.
         /// </exception>
+        /// <exception cref="InvalidOperationException">
+        /// This graph is already complete, as indicated by the value of the
+        /// <see cref="IsCompleteGraph"/> property.
+        /// </exception>
         public void AddEdge(TEdge edge)
         {
             if (edge == null)
             {
                 throw new ArgumentNullException(nameof(edge), "Cannot add a null edge to the graph.");
+            }
+
+            if (IsCompleteGraph)
+            {
+                throw new InvalidOperationException("Cannot add a new edge to a complete undirected graph.");
             }
 
             if (!Vertices.Contains(edge.Vertex1))
