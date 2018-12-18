@@ -4,20 +4,20 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
 {
     /// <summary>
     /// Provides unit testing methods for the
-    /// <see cref="UndirectedEdge"/> class.
+    /// <see cref="UndirectedEdge{TVertex}"/> class.
     /// </summary>
     [TestClass]
     public class UndirectedEdgeTests
     {
         /// <summary>
-        /// Tests constructing a new <see cref="UndirectedEdge"/>
+        /// Tests constructing a new <see cref="UndirectedEdge{TVertex}"/>
         /// instance with initial data.
         /// </summary>
         [TestMethod]
         public void UndirectedEdge_InitializationWithValuesTest()
         {
             // Arrange.
-            UndirectedEdge edge;
+            UndirectedEdge<Vertex> edge;
             Vertex vertex1;
             Vertex vertex2;
             string expectedVertex1Label = "My label 1";
@@ -26,7 +26,7 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             // Act.
             vertex1 = new Vertex(expectedVertex1Label);
             vertex2 = new Vertex(expectedVertex2Label);
-            edge = new UndirectedEdge(vertex1, vertex2);
+            edge = new UndirectedEdge<Vertex>(vertex1, vertex2);
 
             // Assert.
             Assert.IsNotNull(edge.Vertex1);
@@ -36,15 +36,15 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         }
 
         /// <summary>
-        /// Tests the equality of two <see cref="UndirectedEdge"/>
+        /// Tests the equality of two <see cref="UndirectedEdge{TVertex}"/>
         /// instances with the same data and vertex order.
         /// </summary>
         [TestMethod]
         public void UndirectedEdge_EqualsWithSameVertexOrderTest()
         {
             // Arrange.
-            UndirectedEdge edge1;
-            UndirectedEdge edge2;
+            UndirectedEdge<Vertex> edge1;
+            UndirectedEdge<Vertex> edge2;
             Vertex vertex1;
             Vertex vertex2;
             Vertex vertex3;
@@ -59,8 +59,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             vertex2 = new Vertex(expectedEdge1Vertex2Label);
             vertex3 = new Vertex(expectedEdge2Vertex1Label);
             vertex4 = new Vertex(expectedEdge2Vertex2Label);
-            edge1 = new UndirectedEdge(vertex1, vertex2);
-            edge2 = new UndirectedEdge(vertex3, vertex4);
+            edge1 = new UndirectedEdge<Vertex>(vertex1, vertex2);
+            edge2 = new UndirectedEdge<Vertex>(vertex3, vertex4);
 
             // Assert.
             Assert.AreNotSame(edge1, edge2);
@@ -68,15 +68,15 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         }
 
         /// <summary>
-        /// Tests the equality of two <see cref="UndirectedEdge"/>
+        /// Tests the equality of two <see cref="UndirectedEdge{TVertex}"/>
         /// instances with the same data but different vertex order.
         /// </summary>
         [TestMethod]
         public void UndirectedEdge_EqualsWithDifferentVertexOrderTest()
         {
             // Arrange.
-            UndirectedEdge edge1;
-            UndirectedEdge edge2;
+            UndirectedEdge<Vertex> edge1;
+            UndirectedEdge<Vertex> edge2;
             Vertex vertex1;
             Vertex vertex2;
             Vertex vertex3;
@@ -91,8 +91,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             vertex2 = new Vertex(expectedEdge1Vertex2Label);
             vertex3 = new Vertex(expectedEdge2Vertex1Label);
             vertex4 = new Vertex(expectedEdge2Vertex2Label);
-            edge1 = new UndirectedEdge(vertex1, vertex2);
-            edge2 = new UndirectedEdge(vertex3, vertex4);
+            edge1 = new UndirectedEdge<Vertex>(vertex1, vertex2);
+            edge2 = new UndirectedEdge<Vertex>(vertex3, vertex4);
 
             // Assert.
             Assert.AreNotSame(edge1, edge2);
@@ -100,15 +100,15 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         }
 
         /// <summary>
-        /// Tests the inequality of two <see cref="UndirectedEdge"/>
+        /// Tests the inequality of two <see cref="UndirectedEdge{TVertex}"/>
         /// instances with different vertex data.
         /// </summary>
         [TestMethod]
         public void UndirectedEdge_NotEqualsVerticesTest()
         {
             // Arrange.
-            UndirectedEdge edge1;
-            UndirectedEdge edge2;
+            UndirectedEdge<Vertex> edge1;
+            UndirectedEdge<Vertex> edge2;
             Vertex vertex1;
             Vertex vertex2;
             Vertex vertex3;
@@ -123,8 +123,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             vertex2 = new Vertex(expectedEdge1Vertex2Label);
             vertex3 = new Vertex(expectedEdge2Vertex1Label);
             vertex4 = new Vertex(expectedEdge2Vertex2Label);
-            edge1 = new UndirectedEdge(vertex1, vertex2);
-            edge2 = new UndirectedEdge(vertex3, vertex4);
+            edge1 = new UndirectedEdge<Vertex>(vertex1, vertex2);
+            edge2 = new UndirectedEdge<Vertex>(vertex3, vertex4);
 
             // Assert.
             Assert.AreNotSame(edge1, edge2);

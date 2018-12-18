@@ -5,13 +5,13 @@ namespace Xyaneon.ComputerScience.GraphTheory
     /// <summary>
     /// Represents a weighted edge in an undirected graph.
     /// </summary>
-    /// <seealso cref="UndirectedEdge"/>
-    public class UndirectedWeightedEdge : UndirectedEdge, IEquatable<UndirectedWeightedEdge>, IWeighted
+    /// <seealso cref="UndirectedEdge{TVertex}"/>
+    public class UndirectedWeightedEdge<TVertex> : UndirectedEdge<TVertex>, IEquatable<UndirectedWeightedEdge<TVertex>>, IWeighted where TVertex : Vertex
     {
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UndirectedWeightedEdge"/> class
+        /// Initializes a new instance of the <see cref="UndirectedWeightedEdge{TVertex}"/> class
         /// using the provided vertices and weight.
         /// </summary>
         /// <param name="vertex1">
@@ -28,7 +28,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
         /// -or-
         /// <paramref name="vertex2"/> is <see langword="null"/>.
         /// </exception>
-        public UndirectedWeightedEdge(Vertex vertex1, Vertex vertex2, int weight) : base(vertex1, vertex2)
+        public UndirectedWeightedEdge(TVertex vertex1, TVertex vertex2, int weight) : base(vertex1, vertex2)
         {
             Weight = weight;
         }
@@ -38,21 +38,21 @@ namespace Xyaneon.ComputerScience.GraphTheory
         #region IEquatable<UndirectedWeightedEdge> implementation
 
         /// <summary>
-        /// Indicates whether the current <see cref="UndirectedWeightedEdge"/>
-        /// is equal to another <see cref="UndirectedWeightedEdge"/>.
+        /// Indicates whether the current <see cref="UndirectedWeightedEdge{TVertex}"/>
+        /// is equal to another <see cref="UndirectedWeightedEdge{TVertex}"/>.
         /// </summary>
         /// <param name="other">
-        /// The <see cref="UndirectedWeightedEdge"/> to compare with this
+        /// The <see cref="UndirectedWeightedEdge{TVertex}"/> to compare with this
         /// object.
         /// </param>
         /// <returns>
         /// <see langword="true"/> if the other
-        /// <see cref="UndirectedWeightedEdge"/> is equal to this
-        /// <see cref="UndirectedWeightedEdge"/>; otherwise,
+        /// <see cref="UndirectedWeightedEdge{TVertex}"/> is equal to this
+        /// <see cref="UndirectedWeightedEdge{TVertex}"/>; otherwise,
         /// <see langword="false"/>.
         /// </returns>
         /// <seealso cref="IEquatable{T}.Equals(T)"/>
-        public bool Equals(UndirectedWeightedEdge other)
+        public bool Equals(UndirectedWeightedEdge<TVertex> other)
         {
             if (other == null)
             {
@@ -84,27 +84,27 @@ namespace Xyaneon.ComputerScience.GraphTheory
 
         /// <summary>
         /// Determines whether the specified object is equal to
-        /// this <see cref="UndirectedWeightedEdge"/>.
+        /// this <see cref="UndirectedWeightedEdge{TVertex}"/>.
         /// </summary>
         /// <param name="obj">
         /// The object to compare to the current
-        /// <see cref="UndirectedWeightedEdge"/>.
+        /// <see cref="UndirectedWeightedEdge{TVertex}"/>.
         /// </param>
         /// <returns>
         /// <see langword="true"/> if the specified object is equal to
-        /// this <see cref="UndirectedWeightedEdge"/>; otherwise,
+        /// this <see cref="UndirectedWeightedEdge{TVertex}"/>; otherwise,
         /// <see langword="false"/>.
         /// </returns>
         public override bool Equals(object obj)
         {
-            return Equals(obj as UndirectedWeightedEdge);
+            return Equals(obj as UndirectedWeightedEdge<TVertex>);
         }
 
         /// <summary>
-        /// Gets a hash code for this <see cref="UndirectedWeightedEdge"/>.
+        /// Gets a hash code for this <see cref="UndirectedWeightedEdge{TVertex}"/>.
         /// </summary>
         /// <returns>
-        /// A hash code for the current <see cref="UndirectedWeightedEdge"/>.
+        /// A hash code for the current <see cref="UndirectedWeightedEdge{TVertex}"/>.
         /// </returns>
         public override int GetHashCode()
         {
@@ -118,22 +118,22 @@ namespace Xyaneon.ComputerScience.GraphTheory
         #region Operators
 
         /// <summary>
-        /// Determines whether two <see cref="UndirectedWeightedEdge"/>
+        /// Determines whether two <see cref="UndirectedWeightedEdge{TVertex}"/>
         /// instances are equal to each other.
         /// </summary>
         /// <param name="edge1">
-        /// The <see cref="UndirectedWeightedEdge"/> on the left hand of the
+        /// The <see cref="UndirectedWeightedEdge{TVertex}"/> on the left hand of the
         /// expression.
         /// </param>
         /// <param name="edge2">
-        /// The <see cref="UndirectedWeightedEdge"/> on the right hand of the
+        /// The <see cref="UndirectedWeightedEdge{TVertex}"/> on the right hand of the
         /// expression.
         /// </param>
         /// <returns>
         /// <see langword="true"/> if <paramref name="edge1"/> is equal to
         /// <paramref name="edge2"/>; otherwise, <see langword="false"/>.
         /// </returns>
-        public static bool operator ==(UndirectedWeightedEdge edge1, UndirectedWeightedEdge edge2)
+        public static bool operator ==(UndirectedWeightedEdge<TVertex> edge1, UndirectedWeightedEdge<TVertex> edge2)
         {
             if (ReferenceEquals(edge1, edge2))
             {
@@ -154,22 +154,22 @@ namespace Xyaneon.ComputerScience.GraphTheory
         }
 
         /// <summary>
-        /// Determines whether two <see cref="UndirectedWeightedEdge"/>
+        /// Determines whether two <see cref="UndirectedWeightedEdge{TVertex}"/>
         /// instances are not equal to each other.
         /// </summary>
         /// <param name="edge1">
-        /// The <see cref="UndirectedWeightedEdge"/> on the left hand of the
+        /// The <see cref="UndirectedWeightedEdge{TVertex}"/> on the left hand of the
         /// expression.
         /// </param>
         /// <param name="edge2">
-        /// The <see cref="UndirectedWeightedEdge"/> on the right hand of the
+        /// The <see cref="UndirectedWeightedEdge{TVertex}"/> on the right hand of the
         /// expression.
         /// </param>
         /// <returns>
         /// <see langword="true"/> if <paramref name="edge1"/> is not equal to
         /// <paramref name="edge2"/>; otherwise, <see langword="false"/>.
         /// </returns>
-        public static bool operator !=(UndirectedWeightedEdge edge1, UndirectedWeightedEdge edge2)
+        public static bool operator !=(UndirectedWeightedEdge<TVertex> edge1, UndirectedWeightedEdge<TVertex> edge2)
         {
             if (ReferenceEquals(edge1, edge2))
             {

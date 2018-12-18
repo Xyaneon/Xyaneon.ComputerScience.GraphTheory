@@ -7,17 +7,23 @@ namespace Xyaneon.ComputerScience.GraphTheory
     /// <summary>
     /// Represents an undirected graph.
     /// </summary>
+    /// <typeparam name="TVertex">
+    /// The type of vertices used in this graph. Must be either
+    /// <see cref="Vertex"/> or a derived class.
+    /// </typeparam>
     /// <typeparam name="TEdge">
     /// The type of edges used in this graph. Must be either
-    /// <see cref="UndirectedEdge"/> or a derived class.
+    /// <see cref="UndirectedEdge{TVertex}"/> or a derived class.
     /// </typeparam>
-    /// <seealso cref="DirectedGraph{TEdge}"/>
-    public class UndirectedGraph<TEdge> where TEdge : UndirectedEdge
+    /// <seealso cref="DirectedGraph{TVertex, TEdge}"/>
+    public class UndirectedGraph<TVertex, TEdge>
+        where TEdge : UndirectedEdge<TVertex>
+        where TVertex : Vertex
     {
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UndirectedGraph{TEdge}"/> class
+        /// Initializes a new instance of the <see cref="UndirectedGraph{TVertex, TEdge}"/> class
         /// using the provided collections of edges and vertices.
         /// </summary>
         /// <param name="edges">
@@ -35,7 +41,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
         /// <paramref name="edges"/> contains an edge
         /// which has a <see cref="Vertex"/> which is not in <paramref name="vertices"/>.
         /// </exception>
-        public UndirectedGraph(IEnumerable<TEdge> edges, IEnumerable<Vertex> vertices)
+        public UndirectedGraph(IEnumerable<TEdge> edges, IEnumerable<TVertex> vertices)
         {
             if (edges == null)
             {
@@ -65,7 +71,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
             }
 
             _edges = new List<TEdge>(edges);
-            _vertices = new List<Vertex>(vertices);
+            _vertices = new List<TVertex>(vertices);
         }
 
         #endregion // End constructors region.
@@ -92,7 +98,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
         /// <summary>
         /// Gets the read-only collection of vertices in this graph.
         /// </summary>
-        public IReadOnlyCollection<Vertex> Vertices
+        public IReadOnlyCollection<TVertex> Vertices
         {
             get => _vertices.AsReadOnly();
         }
@@ -102,7 +108,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
         #region Fields
 
         private List<TEdge> _edges;
-        private List<Vertex> _vertices;
+        private List<TVertex> _vertices;
 
         #endregion // End fields region.
 
@@ -185,7 +191,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
         /// the same <see cref="Vertex.Label"/> property value as
         /// <paramref name="vertex"/>.
         /// </exception>
-        public void AddVertex(Vertex vertex)
+        public void AddVertex(TVertex vertex)
         {
             if (vertex == null)
             {
@@ -247,7 +253,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
         /// <paramref name="vertex"/> is not in this graph's collection of
         /// vertices.
         /// </exception>
-        public IReadOnlyCollection<Vertex> GetAdjacentVertices(Vertex vertex)
+        public IReadOnlyCollection<Vertex> GetAdjacentVertices(TVertex vertex)
         {
             if (vertex == null)
             {
@@ -259,7 +265,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
                 throw new ArgumentException("The given vertex to find the adjacent vertices of is not in the graph.", nameof(vertex));
             }
 
-            var adjacentVertices = new List<Vertex>();
+            var adjacentVertices = new List<TVertex>();
 
             foreach (var edge in Edges)
             {
@@ -297,7 +303,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
         /// property value equal to <paramref name="label"/> is not in this
         /// graph's collection of vertices.
         /// </exception>
-        public IReadOnlyCollection<Vertex> GetAdjacentVertices(string label)
+        public IReadOnlyCollection<TVertex> GetAdjacentVertices(string label)
         {
             if (label == null)
             {
@@ -309,7 +315,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
                 throw new ArgumentException("The given vertex label to find the adjacent vertices of is not in the graph.", nameof(label));
             }
 
-            var adjacentVertices = new List<Vertex>();
+            var adjacentVertices = new List<TVertex>();
 
             foreach (var edge in Edges)
             {
@@ -345,7 +351,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
         /// -or-
         /// <paramref name="vertex2"/> is <see langword="null"/>.
         /// </exception>
-        public TEdge GetEdge(Vertex vertex1, Vertex vertex2)
+        public TEdge GetEdge(TVertex vertex1, TVertex vertex2)
         {
             if (vertex1 == null)
             {
@@ -357,7 +363,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
                 throw new ArgumentNullException(nameof(vertex2), "Cannot retrieve an edge from the graph using a null vertex.");
             }
 
-            var searchEdge = new UndirectedEdge(vertex1, vertex2);
+            var searchEdge = new UndirectedEdge<TVertex>(vertex1, vertex2);
             return GetEqualEdge(searchEdge);
         }
 
@@ -377,8 +383,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
         /// </returns>
         public TEdge GetEdge(string vertexLabel1, string vertexLabel2)
         {
-            var searchEdge = new UndirectedEdge(new Vertex(vertexLabel1), new Vertex(vertexLabel2));
-            return GetEqualEdge(searchEdge);
+            return GetEdgeWithVertexLabels(vertexLabel1, vertexLabel2);
         }
 
         /// <summary>
@@ -409,7 +414,25 @@ namespace Xyaneon.ComputerScience.GraphTheory
 
         #region Private methods
 
-        private TEdge GetEqualEdge(UndirectedEdge searchEdge)
+        private TEdge GetEdgeWithVertexLabels(string vertexLabel1, string vertexLabel2)
+        {
+            foreach (TEdge edge in Edges)
+            {
+                if (edge.Vertex1.Label == vertexLabel1 && edge.Vertex2.Label == vertexLabel2)
+                {
+                    return edge;
+                }
+
+                if (edge.Vertex1.Label == vertexLabel2 && edge.Vertex2.Label == vertexLabel1)
+                {
+                    return edge;
+                }
+            }
+
+            return null;
+        }
+
+        private TEdge GetEqualEdge(UndirectedEdge<TVertex> searchEdge)
         {
             foreach (TEdge edge in Edges)
             {
