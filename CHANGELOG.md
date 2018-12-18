@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Weighted edges now use the double type for weights instead of int.
+- A generic vertex type is now used for edges and graphs.
 
 ## [1.1.0] - 2018-12-17
 ### Added
