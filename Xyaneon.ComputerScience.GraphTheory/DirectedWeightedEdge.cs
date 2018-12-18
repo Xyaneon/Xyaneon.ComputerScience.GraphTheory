@@ -6,7 +6,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
     /// Represents a weighted edge in a directed graph.
     /// </summary>
     /// <seealso cref="DirectedEdge{TVertex}"/>
-    /// <seealso cref="UndirectedWeightedEdge"/>
+    /// <seealso cref="UndirectedWeightedEdge{TVertex}"/>
     public class DirectedWeightedEdge<TVertex> : DirectedEdge<TVertex>, IEquatable<DirectedWeightedEdge<TVertex>>, IWeighted where TVertex : Vertex
     {
         #region Constructors

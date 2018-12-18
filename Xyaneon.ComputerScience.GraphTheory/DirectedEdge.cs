@@ -8,7 +8,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
     /// <typeparam name="TVertex">
     /// The type of <see cref="Vertex"/> stored in this edge.
     /// </typeparam>
-    /// <seealso cref="UndirectedEdge"/>
+    /// <seealso cref="UndirectedEdge{TVertex}"/>
     /// <seealso cref="Vertex"/>
     public class DirectedEdge<TVertex> : IEquatable<DirectedEdge<TVertex>> where TVertex : Vertex
     {
