@@ -11,7 +11,7 @@
             <typeparam name="TVertex">
             The type of <see cref="T:Xyaneon.ComputerScience.GraphTheory.Vertex"/> stored in this edge.
             </typeparam>
-            <seealso cref="!:UndirectedEdge"/>
+            <seealso cref="T:Xyaneon.ComputerScience.GraphTheory.UndirectedEdge`1"/>
             <seealso cref="T:Xyaneon.ComputerScience.GraphTheory.Vertex"/>
         </member>
         <member name="M:Xyaneon.ComputerScience.GraphTheory.DirectedEdge`1.#ctor(`0,`0)">
@@ -330,7 +330,7 @@
             Represents a weighted edge in a directed graph.
             </summary>
             <seealso cref="T:Xyaneon.ComputerScience.GraphTheory.DirectedEdge`1"/>
-            <seealso cref="!:UndirectedWeightedEdge"/>
+            <seealso cref="T:Xyaneon.ComputerScience.GraphTheory.UndirectedWeightedEdge`1"/>
         </member>
         <member name="M:Xyaneon.ComputerScience.GraphTheory.DirectedWeightedEdge`1.#ctor(`0,`0,System.Int32)">
             <summary>
