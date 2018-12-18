@@ -473,7 +473,7 @@
         </member>
         <member name="P:Xyaneon.ComputerScience.GraphTheory.IWeighted.Weight">
             <summary>
-            Gets or sets the weight of this edge.
+            Gets or sets the weight of this object.
             </summary>
         </member>
         <member name="T:Xyaneon.ComputerScience.GraphTheory.UndirectedEdge">
