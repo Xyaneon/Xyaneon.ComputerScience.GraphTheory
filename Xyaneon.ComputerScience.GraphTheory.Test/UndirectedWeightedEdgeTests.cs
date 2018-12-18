@@ -4,13 +4,13 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
 {
     /// <summary>
     /// Provides unit testing methods for the
-    /// <see cref="UndirectedWeightedEdge"/> class.
+    /// <see cref="UndirectedWeightedEdge{TVertex}"/> class.
     /// </summary>
     [TestClass]
     public class UndirectedWeightedEdgeTests
     {
         /// <summary>
-        /// Tests constructing a new <see cref="UndirectedWeightedEdge"/>
+        /// Tests constructing a new <see cref="UndirectedWeightedEdge{TVertex}"/>
         /// instance with initial data.
         /// </summary>
         [TestMethod]
@@ -18,7 +18,7 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         {
             // Arrange.
             const int expectedWeight = 2;
-            UndirectedWeightedEdge edge;
+            UndirectedWeightedEdge<Vertex> edge;
             Vertex vertex1;
             Vertex vertex2;
             string expectedVertex1Label = "My label 1";
@@ -27,7 +27,7 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             // Act.
             vertex1 = new Vertex(expectedVertex1Label);
             vertex2 = new Vertex(expectedVertex2Label);
-            edge = new UndirectedWeightedEdge(vertex1, vertex2, expectedWeight);
+            edge = new UndirectedWeightedEdge<Vertex>(vertex1, vertex2, expectedWeight);
 
             // Assert.
             Assert.IsNotNull(edge.Vertex1);
@@ -38,7 +38,7 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         }
 
         /// <summary>
-        /// Tests the equality of two <see cref="UndirectedWeightedEdge"/>
+        /// Tests the equality of two <see cref="UndirectedWeightedEdge{TVertex}"/>
         /// instances with the same data and vertex order.
         /// </summary>
         [TestMethod]
@@ -46,8 +46,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         {
             // Arrange.
             const int expectedWeight = 2;
-            UndirectedWeightedEdge edge1;
-            UndirectedWeightedEdge edge2;
+            UndirectedWeightedEdge<Vertex> edge1;
+            UndirectedWeightedEdge<Vertex> edge2;
             Vertex vertex1;
             Vertex vertex2;
             Vertex vertex3;
@@ -62,8 +62,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             vertex2 = new Vertex(expectedEdge1Vertex2Label);
             vertex3 = new Vertex(expectedEdge2Vertex1Label);
             vertex4 = new Vertex(expectedEdge2Vertex2Label);
-            edge1 = new UndirectedWeightedEdge(vertex1, vertex2, expectedWeight);
-            edge2 = new UndirectedWeightedEdge(vertex3, vertex4, expectedWeight);
+            edge1 = new UndirectedWeightedEdge<Vertex>(vertex1, vertex2, expectedWeight);
+            edge2 = new UndirectedWeightedEdge<Vertex>(vertex3, vertex4, expectedWeight);
 
             // Assert.
             Assert.AreNotSame(edge1, edge2);
@@ -71,7 +71,7 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         }
 
         /// <summary>
-        /// Tests the equality of two <see cref="UndirectedWeightedEdge"/>
+        /// Tests the equality of two <see cref="UndirectedWeightedEdge{TVertex}"/>
         /// instances with the same data but different vertex order.
         /// </summary>
         [TestMethod]
@@ -79,8 +79,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         {
             // Arrange.
             const int expectedWeight = 2;
-            UndirectedWeightedEdge edge1;
-            UndirectedWeightedEdge edge2;
+            UndirectedWeightedEdge<Vertex> edge1;
+            UndirectedWeightedEdge<Vertex> edge2;
             Vertex vertex1;
             Vertex vertex2;
             Vertex vertex3;
@@ -95,8 +95,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             vertex2 = new Vertex(expectedEdge1Vertex2Label);
             vertex3 = new Vertex(expectedEdge2Vertex1Label);
             vertex4 = new Vertex(expectedEdge2Vertex2Label);
-            edge1 = new UndirectedWeightedEdge(vertex1, vertex2, expectedWeight);
-            edge2 = new UndirectedWeightedEdge(vertex3, vertex4, expectedWeight);
+            edge1 = new UndirectedWeightedEdge<Vertex>(vertex1, vertex2, expectedWeight);
+            edge2 = new UndirectedWeightedEdge<Vertex>(vertex3, vertex4, expectedWeight);
 
             // Assert.
             Assert.AreNotSame(edge1, edge2);
@@ -104,7 +104,7 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         }
 
         /// <summary>
-        /// Tests the inequality of two <see cref="UndirectedWeightedEdge"/>
+        /// Tests the inequality of two <see cref="UndirectedWeightedEdge{TVertex}"/>
         /// instances with different vertex data.
         /// </summary>
         [TestMethod]
@@ -112,8 +112,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         {
             // Arrange.
             const int expectedWeight = 2;
-            UndirectedWeightedEdge edge1;
-            UndirectedWeightedEdge edge2;
+            UndirectedWeightedEdge<Vertex> edge1;
+            UndirectedWeightedEdge<Vertex> edge2;
             Vertex vertex1;
             Vertex vertex2;
             Vertex vertex3;
@@ -128,8 +128,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             vertex2 = new Vertex(expectedEdge1Vertex2Label);
             vertex3 = new Vertex(expectedEdge2Vertex1Label);
             vertex4 = new Vertex(expectedEdge2Vertex2Label);
-            edge1 = new UndirectedWeightedEdge(vertex1, vertex2, expectedWeight);
-            edge2 = new UndirectedWeightedEdge(vertex3, vertex4, expectedWeight);
+            edge1 = new UndirectedWeightedEdge<Vertex>(vertex1, vertex2, expectedWeight);
+            edge2 = new UndirectedWeightedEdge<Vertex>(vertex3, vertex4, expectedWeight);
 
             // Assert.
             Assert.AreNotSame(edge1, edge2);
@@ -137,7 +137,7 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         }
 
         /// <summary>
-        /// Tests the inequality of two <see cref="UndirectedWeightedEdge"/>
+        /// Tests the inequality of two <see cref="UndirectedWeightedEdge{TVertex}"/>
         /// instances with different weight data.
         /// </summary>
         [TestMethod]
@@ -146,8 +146,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             // Arrange.
             const int expectedWeight1 = 2;
             const int expectedWeight2 = 5;
-            UndirectedWeightedEdge edge1;
-            UndirectedWeightedEdge edge2;
+            UndirectedWeightedEdge<Vertex> edge1;
+            UndirectedWeightedEdge<Vertex> edge2;
             Vertex vertex1;
             Vertex vertex2;
             Vertex vertex3;
@@ -162,8 +162,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             vertex2 = new Vertex(expectedEdge1Vertex2Label);
             vertex3 = new Vertex(expectedEdge2Vertex1Label);
             vertex4 = new Vertex(expectedEdge2Vertex2Label);
-            edge1 = new UndirectedWeightedEdge(vertex1, vertex2, expectedWeight1);
-            edge2 = new UndirectedWeightedEdge(vertex3, vertex4, expectedWeight2);
+            edge1 = new UndirectedWeightedEdge<Vertex>(vertex1, vertex2, expectedWeight1);
+            edge2 = new UndirectedWeightedEdge<Vertex>(vertex3, vertex4, expectedWeight2);
 
             // Assert.
             Assert.AreNotSame(edge1, edge2);

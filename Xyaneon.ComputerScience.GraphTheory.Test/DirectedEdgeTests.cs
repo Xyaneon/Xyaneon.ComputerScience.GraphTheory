@@ -4,20 +4,20 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
 {
     /// <summary>
     /// Provides unit testing methods for the
-    /// <see cref="DirectedEdge"/> class.
+    /// <see cref="DirectedEdge{TVertex}"/> class.
     /// </summary>
     [TestClass]
     public class DirectedEdgeTests
     {
         /// <summary>
-        /// Tests constructing a new <see cref="DirectedEdge"/>
+        /// Tests constructing a new <see cref="DirectedEdge{TVertex}"/>
         /// instance with initial data.
         /// </summary>
         [TestMethod]
         public void DirectedEdge_InitializationWithValuesTest()
         {
             // Arrange.
-            DirectedEdge edge;
+            DirectedEdge<Vertex> edge;
             Vertex SourceVertex;
             Vertex DestinationVertex;
             string expectedSourceVertexLabel = "My label 1";
@@ -26,7 +26,7 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             // Act.
             SourceVertex = new Vertex(expectedSourceVertexLabel);
             DestinationVertex = new Vertex(expectedDestinationVertexLabel);
-            edge = new DirectedEdge(SourceVertex, DestinationVertex);
+            edge = new DirectedEdge<Vertex>(SourceVertex, DestinationVertex);
 
             // Assert.
             Assert.IsNotNull(edge.SourceVertex);
@@ -36,15 +36,15 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         }
 
         /// <summary>
-        /// Tests the equality of two <see cref="DirectedEdge"/>
+        /// Tests the equality of two <see cref="DirectedEdge{TVertex}"/>
         /// instances with the same data and vertex order.
         /// </summary>
         [TestMethod]
         public void DirectedEdge_EqualsWithSameVertexOrderTest()
         {
             // Arrange.
-            DirectedEdge edge1;
-            DirectedEdge edge2;
+            DirectedEdge<Vertex> edge1;
+            DirectedEdge<Vertex> edge2;
             Vertex SourceVertex;
             Vertex DestinationVertex;
             Vertex vertex3;
@@ -59,8 +59,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             DestinationVertex = new Vertex(expectedEdge1DestinationVertexLabel);
             vertex3 = new Vertex(expectedEdge2SourceVertexLabel);
             vertex4 = new Vertex(expectedEdge2DestinationVertexLabel);
-            edge1 = new DirectedEdge(SourceVertex, DestinationVertex);
-            edge2 = new DirectedEdge(vertex3, vertex4);
+            edge1 = new DirectedEdge<Vertex>(SourceVertex, DestinationVertex);
+            edge2 = new DirectedEdge<Vertex>(vertex3, vertex4);
 
             // Assert.
             Assert.AreNotSame(edge1, edge2);
@@ -68,15 +68,15 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         }
 
         /// <summary>
-        /// Tests the inequality of two <see cref="DirectedEdge"/>
+        /// Tests the inequality of two <see cref="DirectedEdge{TVertex}"/>
         /// instances with the same data but different vertex order.
         /// </summary>
         [TestMethod]
         public void DirectedEdge_NotEqualsWithDifferentVertexOrderTest()
         {
             // Arrange.
-            DirectedEdge edge1;
-            DirectedEdge edge2;
+            DirectedEdge<Vertex> edge1;
+            DirectedEdge<Vertex> edge2;
             Vertex SourceVertex;
             Vertex DestinationVertex;
             Vertex vertex3;
@@ -91,8 +91,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             DestinationVertex = new Vertex(expectedEdge1DestinationVertexLabel);
             vertex3 = new Vertex(expectedEdge2SourceVertexLabel);
             vertex4 = new Vertex(expectedEdge2DestinationVertexLabel);
-            edge1 = new DirectedEdge(SourceVertex, DestinationVertex);
-            edge2 = new DirectedEdge(vertex3, vertex4);
+            edge1 = new DirectedEdge<Vertex>(SourceVertex, DestinationVertex);
+            edge2 = new DirectedEdge<Vertex>(vertex3, vertex4);
 
             // Assert.
             Assert.AreNotSame(edge1, edge2);
@@ -100,15 +100,15 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         }
 
         /// <summary>
-        /// Tests the inequality of two <see cref="DirectedEdge"/>
+        /// Tests the inequality of two <see cref="DirectedEdge{TVertex}"/>
         /// instances with different vertex data.
         /// </summary>
         [TestMethod]
         public void DirectedEdge_NotEqualsVerticesTest()
         {
             // Arrange.
-            DirectedEdge edge1;
-            DirectedEdge edge2;
+            DirectedEdge<Vertex> edge1;
+            DirectedEdge<Vertex> edge2;
             Vertex SourceVertex;
             Vertex DestinationVertex;
             Vertex vertex3;
@@ -123,8 +123,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             DestinationVertex = new Vertex(expectedEdge1DestinationVertexLabel);
             vertex3 = new Vertex(expectedEdge2SourceVertexLabel);
             vertex4 = new Vertex(expectedEdge2DestinationVertexLabel);
-            edge1 = new DirectedEdge(SourceVertex, DestinationVertex);
-            edge2 = new DirectedEdge(vertex3, vertex4);
+            edge1 = new DirectedEdge<Vertex>(SourceVertex, DestinationVertex);
+            edge2 = new DirectedEdge<Vertex>(vertex3, vertex4);
 
             // Assert.
             Assert.AreNotSame(edge1, edge2);
