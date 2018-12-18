@@ -6,8 +6,8 @@
     public interface IWeighted
     {
         /// <summary>
-        /// Gets or sets the weight of this edge.
+        /// Gets or sets the weight of this object.
         /// </summary>
-        int Weight { get; set; }
+        double Weight { get; set; }
     }
 }

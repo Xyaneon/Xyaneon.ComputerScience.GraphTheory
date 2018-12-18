@@ -71,7 +71,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
         /// <summary>
         /// Gets or sets the weight of this edge.
         /// </summary>
-        public int Weight { get; set; }
+        public double Weight { get; set; }
 
         #endregion // End IWeighted implementation region.
 
