@@ -174,6 +174,22 @@ namespace Xyaneon.ComputerScience.GraphTheory
             return Vertex1.GetHashCode() ^ Vertex2.GetHashCode();
         }
 
+        /// <summary>
+        /// Returns a value indicating whether this edge is incident on the
+        /// provided vertex.
+        /// </summary>
+        /// <param name="vertex">
+        /// The vertex to check this edge against.
+        /// </param>
+        /// <returns>
+        /// <see langword="true"/> if this edge is incident on
+        /// <paramref name="vertex"/>; otherwise, <see langword="false"/>.
+        /// </returns>
+        public bool IsIncidentOn(TVertex vertex)
+        {
+            return Vertex1 == vertex || Vertex2 == vertex;
+        }
+
         #endregion // End public methods region.
 
         #region Operators

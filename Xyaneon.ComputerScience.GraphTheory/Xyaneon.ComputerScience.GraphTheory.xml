@@ -98,6 +98,34 @@
             A hash code for the current <see cref="T:Xyaneon.ComputerScience.GraphTheory.DirectedEdge`1"/>.
             </returns>
         </member>
+        <member name="M:Xyaneon.ComputerScience.GraphTheory.DirectedEdge`1.IsIncidentFrom(`0)">
+            <summary>
+            Returns a value indicating whether this edge is incident from the
+            provided vertex.
+            </summary>
+            <param name="vertex">
+            The vertex to check this edge against.
+            </param>
+            <returns>
+            <see langword="true"/> if this edge is incident from
+            <paramref name="vertex"/>; otherwise, <see langword="false"/>.
+            </returns>
+            <seealso cref="M:Xyaneon.ComputerScience.GraphTheory.DirectedEdge`1.IsIncidentTo(`0)"/>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.GraphTheory.DirectedEdge`1.IsIncidentTo(`0)">
+            <summary>
+            Returns a value indicating whether this edge is incident to the
+            provided vertex.
+            </summary>
+            <param name="vertex">
+            The vertex to check this edge against.
+            </param>
+            <returns>
+            <see langword="true"/> if this edge is incident to
+            <paramref name="vertex"/>; otherwise, <see langword="false"/>.
+            </returns>
+            <seealso cref="M:Xyaneon.ComputerScience.GraphTheory.DirectedEdge`1.IsIncidentFrom(`0)"/>
+        </member>
         <member name="M:Xyaneon.ComputerScience.GraphTheory.DirectedEdge`1.op_Equality(Xyaneon.ComputerScience.GraphTheory.DirectedEdge{`0},Xyaneon.ComputerScience.GraphTheory.DirectedEdge{`0})">
             <summary>
             Determines whether two <see cref="T:Xyaneon.ComputerScience.GraphTheory.DirectedEdge`1"/>
@@ -597,6 +625,19 @@
             </summary>
             <returns>
             A hash code for the current <see cref="T:Xyaneon.ComputerScience.GraphTheory.UndirectedEdge`1"/>.
+            </returns>
+        </member>
+        <member name="M:Xyaneon.ComputerScience.GraphTheory.UndirectedEdge`1.IsIncidentOn(`0)">
+            <summary>
+            Returns a value indicating whether this edge is incident on the
+            provided vertex.
+            </summary>
+            <param name="vertex">
+            The vertex to check this edge against.
+            </param>
+            <returns>
+            <see langword="true"/> if this edge is incident on
+            <paramref name="vertex"/>; otherwise, <see langword="false"/>.
             </returns>
         </member>
         <member name="M:Xyaneon.ComputerScience.GraphTheory.UndirectedEdge`1.op_Equality(Xyaneon.ComputerScience.GraphTheory.UndirectedEdge{`0},Xyaneon.ComputerScience.GraphTheory.UndirectedEdge{`0})">

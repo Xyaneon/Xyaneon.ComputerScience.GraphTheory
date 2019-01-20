@@ -171,6 +171,40 @@ namespace Xyaneon.ComputerScience.GraphTheory
             return SourceVertex.GetHashCode() ^ DestinationVertex.GetHashCode();
         }
 
+        /// <summary>
+        /// Returns a value indicating whether this edge is incident from the
+        /// provided vertex.
+        /// </summary>
+        /// <param name="vertex">
+        /// The vertex to check this edge against.
+        /// </param>
+        /// <returns>
+        /// <see langword="true"/> if this edge is incident from
+        /// <paramref name="vertex"/>; otherwise, <see langword="false"/>.
+        /// </returns>
+        /// <seealso cref="IsIncidentTo(TVertex)"/>
+        public bool IsIncidentFrom(TVertex vertex)
+        {
+            return SourceVertex == vertex;
+        }
+
+        /// <summary>
+        /// Returns a value indicating whether this edge is incident to the
+        /// provided vertex.
+        /// </summary>
+        /// <param name="vertex">
+        /// The vertex to check this edge against.
+        /// </param>
+        /// <returns>
+        /// <see langword="true"/> if this edge is incident to
+        /// <paramref name="vertex"/>; otherwise, <see langword="false"/>.
+        /// </returns>
+        /// <seealso cref="IsIncidentFrom(TVertex)"/>
+        public bool IsIncidentTo(TVertex vertex)
+        {
+            return DestinationVertex == vertex;
+        }
+
         #endregion // End public methods region.
 
         #region Operators
