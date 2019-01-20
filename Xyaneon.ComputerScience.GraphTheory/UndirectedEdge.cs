@@ -5,8 +5,10 @@ namespace Xyaneon.ComputerScience.GraphTheory
     /// <summary>
     /// Represents an edge in an undirected graph.
     /// </summary>
+    /// <seealso cref="IEdge"/>
+    /// <seealso cref="DirectedEdge{TVertex}"/>
     /// <seealso cref="Vertex"/>
-    public class UndirectedEdge<TVertex> : IEquatable<UndirectedEdge<TVertex>> where TVertex : Vertex
+    public class UndirectedEdge<TVertex> : IEdge, IEquatable<UndirectedEdge<TVertex>> where TVertex : Vertex
     {
         #region Constructors
 
@@ -42,6 +44,20 @@ namespace Xyaneon.ComputerScience.GraphTheory
         }
 
         #endregion // End constructors region.
+
+        #region IEdge implementation
+
+        /// <summary>
+        /// Gets a value indicating whether this edge is a self-loop.
+        /// </summary>
+        /// <remarks>
+        /// A self-loop is defined as an edge whose two vertices are the same
+        /// vertex.
+        /// </remarks>
+        /// <seealso cref="IEdge.IsSelfLoop"/>
+        public bool IsSelfLoop { get => Vertex1 == Vertex2; }
+
+        #endregion // End IEdge implementation region.
 
         #region IEquatable<UndirectedEdge> implementation
 

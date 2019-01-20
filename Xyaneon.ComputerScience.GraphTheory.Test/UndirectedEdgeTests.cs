@@ -36,6 +36,30 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         }
 
         /// <summary>
+        /// Tests that constructing a new <see cref="UndirectedEdge{TVertex}"/>
+        /// with the same vertex used for both ends correctly makes its
+        /// <see cref="IEdge.IsSelfLoop"/> property return
+        /// <see langword="true"/>.
+        /// </summary>
+        [TestMethod]
+        public void UndirectedEdge_IsSelfLoopTest()
+        {
+            // Arrange.
+            UndirectedEdge<Vertex> edge;
+            Vertex vertex1;
+            Vertex vertex2;
+            string expectedVertex1Label = "My label 1";
+
+            // Act.
+            vertex1 = new Vertex(expectedVertex1Label);
+            vertex2 = vertex1;
+            edge = new UndirectedEdge<Vertex>(vertex1, vertex2);
+
+            // Assert.
+            Assert.IsTrue(edge.IsSelfLoop);
+        }
+
+        /// <summary>
         /// Tests the equality of two <see cref="UndirectedEdge{TVertex}"/>
         /// instances with the same data and vertex order.
         /// </summary>
@@ -129,6 +153,31 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             // Assert.
             Assert.AreNotSame(edge1, edge2);
             Assert.AreNotEqual(edge1, edge2);
+        }
+
+        /// <summary>
+        /// Tests that constructing a new <see cref="UndirectedEdge{TVertex}"/>
+        /// with different vertices used for both ends correctly makes its
+        /// <see cref="IEdge.IsSelfLoop"/> property return
+        /// <see langword="false"/>.
+        /// </summary>
+        [TestMethod]
+        public void UndirectedEdge_NotIsSelfLoopTest()
+        {
+            // Arrange.
+            UndirectedEdge<Vertex> edge;
+            Vertex vertex1;
+            Vertex vertex2;
+            string expectedVertex1Label = "My label 1";
+            string expectedVertex2Label = "My label 2";
+
+            // Act.
+            vertex1 = new Vertex(expectedVertex1Label);
+            vertex2 = new Vertex(expectedVertex2Label);
+            edge = new UndirectedEdge<Vertex>(vertex1, vertex2);
+
+            // Assert.
+            Assert.IsFalse(edge.IsSelfLoop);
         }
     }
 }

@@ -8,9 +8,10 @@ namespace Xyaneon.ComputerScience.GraphTheory
     /// <typeparam name="TVertex">
     /// The type of <see cref="Vertex"/> stored in this edge.
     /// </typeparam>
+    /// <seealso cref="IEdge"/>
     /// <seealso cref="UndirectedEdge{TVertex}"/>
     /// <seealso cref="Vertex"/>
-    public class DirectedEdge<TVertex> : IEquatable<DirectedEdge<TVertex>> where TVertex : Vertex
+    public class DirectedEdge<TVertex> : IEdge, IEquatable<DirectedEdge<TVertex>> where TVertex : Vertex
     {
         #region Constructors
 
@@ -46,6 +47,20 @@ namespace Xyaneon.ComputerScience.GraphTheory
         }
 
         #endregion // End constructors region.
+
+        #region IEdge implementation
+
+        /// <summary>
+        /// Gets a value indicating whether this edge is a self-loop.
+        /// </summary>
+        /// <remarks>
+        /// A self-loop is defined as an edge whose two vertices are the same
+        /// vertex.
+        /// </remarks>
+        /// <seealso cref="IEdge.IsSelfLoop"/>
+        public bool IsSelfLoop { get => SourceVertex == DestinationVertex; }
+
+        #endregion // End IEdge implementation region.
 
         #region IEquatable<DirectedEdge> implementation
 

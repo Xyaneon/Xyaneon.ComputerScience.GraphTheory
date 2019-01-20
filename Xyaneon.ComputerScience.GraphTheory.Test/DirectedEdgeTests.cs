@@ -36,6 +36,30 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         }
 
         /// <summary>
+        /// Tests that constructing a new <see cref="DirectedEdge{TVertex}"/>
+        /// with the same vertex used for both ends correctly makes its
+        /// <see cref="IEdge.IsSelfLoop"/> property return
+        /// <see langword="true"/>.
+        /// </summary>
+        [TestMethod]
+        public void DirectedEdge_IsSelfLoopTest()
+        {
+            // Arrange.
+            DirectedEdge<Vertex> edge;
+            Vertex SourceVertex;
+            Vertex DestinationVertex;
+            string expectedSourceVertexLabel = "My label 1";
+
+            // Act.
+            SourceVertex = new Vertex(expectedSourceVertexLabel);
+            DestinationVertex = SourceVertex;
+            edge = new DirectedEdge<Vertex>(SourceVertex, DestinationVertex);
+
+            // Assert.
+            Assert.IsTrue(edge.IsSelfLoop);
+        }
+
+        /// <summary>
         /// Tests the equality of two <see cref="DirectedEdge{TVertex}"/>
         /// instances with the same data and vertex order.
         /// </summary>
@@ -129,6 +153,31 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             // Assert.
             Assert.AreNotSame(edge1, edge2);
             Assert.AreNotEqual(edge1, edge2);
+        }
+
+        /// <summary>
+        /// Tests that constructing a new <see cref="DirectedEdge{TVertex}"/>
+        /// with different vertices used for both ends correctly makes its
+        /// <see cref="IEdge.IsSelfLoop"/> property return
+        /// <see langword="false"/>.
+        /// </summary>
+        [TestMethod]
+        public void DirectedEdge_NotIsSelfLoopTest()
+        {
+            // Arrange.
+            DirectedEdge<Vertex> edge;
+            Vertex SourceVertex;
+            Vertex DestinationVertex;
+            string expectedSourceVertexLabel = "My label 1";
+            string expectedDestinationVertexLabel = "My label 2";
+
+            // Act.
+            SourceVertex = new Vertex(expectedSourceVertexLabel);
+            DestinationVertex = new Vertex(expectedDestinationVertexLabel);
+            edge = new DirectedEdge<Vertex>(SourceVertex, DestinationVertex);
+
+            // Assert.
+            Assert.IsFalse(edge.IsSelfLoop);
         }
     }
 }

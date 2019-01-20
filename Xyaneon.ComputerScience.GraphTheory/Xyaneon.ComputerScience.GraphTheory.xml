@@ -11,6 +11,7 @@
             <typeparam name="TVertex">
             The type of <see cref="T:Xyaneon.ComputerScience.GraphTheory.Vertex"/> stored in this edge.
             </typeparam>
+            <seealso cref="T:Xyaneon.ComputerScience.GraphTheory.IEdge"/>
             <seealso cref="T:Xyaneon.ComputerScience.GraphTheory.UndirectedEdge`1"/>
             <seealso cref="T:Xyaneon.ComputerScience.GraphTheory.Vertex"/>
         </member>
@@ -30,6 +31,16 @@
             -or-
             <paramref name="destination"/> is <see langword="null"/>.
             </exception>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.GraphTheory.DirectedEdge`1.IsSelfLoop">
+            <summary>
+            Gets a value indicating whether this edge is a self-loop.
+            </summary>
+            <remarks>
+            A self-loop is defined as an edge whose two vertices are the same
+            vertex.
+            </remarks>
+            <seealso cref="P:Xyaneon.ComputerScience.GraphTheory.IEdge.IsSelfLoop"/>
         </member>
         <member name="M:Xyaneon.ComputerScience.GraphTheory.DirectedEdge`1.Equals(Xyaneon.ComputerScience.GraphTheory.DirectedEdge{`0})">
             <summary>
@@ -473,6 +484,20 @@
             </exception>
             <seealso cref="M:Xyaneon.ComputerScience.GraphTheory.GraphCalculations.CalculateNumberOfEdgesInCompleteDirectedGraph(System.Int32)"/>
         </member>
+        <member name="T:Xyaneon.ComputerScience.GraphTheory.IEdge">
+            <summary>
+            Exposes common members on graph edges.
+            </summary>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.GraphTheory.IEdge.IsSelfLoop">
+            <summary>
+            Gets a value indicating whether this edge is a self-loop.
+            </summary>
+            <remarks>
+            A self-loop is defined as an edge whose two vertices are the same
+            vertex.
+            </remarks>
+        </member>
         <member name="T:Xyaneon.ComputerScience.GraphTheory.IWeighted">
             <summary>
             Exposes properties on classes which have an associated weight.
@@ -487,6 +512,8 @@
             <summary>
             Represents an edge in an undirected graph.
             </summary>
+            <seealso cref="T:Xyaneon.ComputerScience.GraphTheory.IEdge"/>
+            <seealso cref="T:Xyaneon.ComputerScience.GraphTheory.DirectedEdge`1"/>
             <seealso cref="T:Xyaneon.ComputerScience.GraphTheory.Vertex"/>
         </member>
         <member name="M:Xyaneon.ComputerScience.GraphTheory.UndirectedEdge`1.#ctor(`0,`0)">
@@ -505,6 +532,16 @@
             -or-
             <paramref name="vertex2"/> is <see langword="null"/>.
             </exception>
+        </member>
+        <member name="P:Xyaneon.ComputerScience.GraphTheory.UndirectedEdge`1.IsSelfLoop">
+            <summary>
+            Gets a value indicating whether this edge is a self-loop.
+            </summary>
+            <remarks>
+            A self-loop is defined as an edge whose two vertices are the same
+            vertex.
+            </remarks>
+            <seealso cref="P:Xyaneon.ComputerScience.GraphTheory.IEdge.IsSelfLoop"/>
         </member>
         <member name="M:Xyaneon.ComputerScience.GraphTheory.UndirectedEdge`1.Equals(Xyaneon.ComputerScience.GraphTheory.UndirectedEdge{`0})">
             <summary>

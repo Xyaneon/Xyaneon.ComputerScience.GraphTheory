@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Copyright>Copyright © Christopher Kyle Horton 2018</Copyright>
+    <Copyright>Copyright © Christopher Kyle Horton 2018-2019</Copyright>
     <PackageLicenseUrl>https://github.com/Xyaneon/Xyaneon.ComputerScience.GraphTheory/blob/master/LICENSE.txt</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Xyaneon/Xyaneon.ComputerScience.GraphTheory</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Xyaneon/Xyaneon.ComputerScience.GraphTheory</RepositoryUrl>

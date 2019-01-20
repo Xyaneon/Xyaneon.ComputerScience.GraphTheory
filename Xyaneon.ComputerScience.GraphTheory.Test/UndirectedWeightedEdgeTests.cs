@@ -104,6 +104,31 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
         }
 
         /// <summary>
+        /// Tests that constructing a new <see cref="UndirectedWeightedEdge{TVertex}"/>
+        /// with the same vertex used for both ends correctly makes its
+        /// <see cref="IEdge.IsSelfLoop"/> property return
+        /// <see langword="true"/>.
+        /// </summary>
+        [TestMethod]
+        public void UndirectedWeightedEdge_IsSelfLoopTest()
+        {
+            // Arrange.
+            const int expectedWeight = 2;
+            UndirectedWeightedEdge<Vertex> edge;
+            Vertex vertex1;
+            Vertex vertex2;
+            string expectedVertex1Label = "My label 1";
+
+            // Act.
+            vertex1 = new Vertex(expectedVertex1Label);
+            vertex2 = vertex1;
+            edge = new UndirectedWeightedEdge<Vertex>(vertex1, vertex2, expectedWeight);
+
+            // Assert.
+            Assert.IsTrue(edge.IsSelfLoop);
+        }
+
+        /// <summary>
         /// Tests the inequality of two <see cref="UndirectedWeightedEdge{TVertex}"/>
         /// instances with different vertex data.
         /// </summary>
@@ -168,6 +193,32 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             // Assert.
             Assert.AreNotSame(edge1, edge2);
             Assert.AreNotEqual(edge1, edge2);
+        }
+
+        /// <summary>
+        /// Tests that constructing a new <see cref="UndirectedWeightedEdge{TVertex}"/>
+        /// with different vertices used for both ends correctly makes its
+        /// <see cref="IEdge.IsSelfLoop"/> property return
+        /// <see langword="false"/>.
+        /// </summary>
+        [TestMethod]
+        public void UndirectedWeightedEdge_NotIsSelfLoopTest()
+        {
+            // Arrange.
+            const int expectedWeight = 2;
+            UndirectedWeightedEdge<Vertex> edge;
+            Vertex vertex1;
+            Vertex vertex2;
+            string expectedVertex1Label = "My label 1";
+            string expectedVertex2Label = "My label 2";
+
+            // Act.
+            vertex1 = new Vertex(expectedVertex1Label);
+            vertex2 = new Vertex(expectedVertex2Label);
+            edge = new UndirectedWeightedEdge<Vertex>(vertex1, vertex2, expectedWeight);
+
+            // Assert.
+            Assert.IsFalse(edge.IsSelfLoop);
         }
     }
 }
