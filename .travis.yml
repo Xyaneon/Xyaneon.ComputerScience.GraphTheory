@@ -1,7 +1,8 @@
 language: csharp
 mono: none
-dotnet: 2.1.503
+dist: xenial
+dotnet: 2.2.103
 solution: Xyaneon.ComputerScience.GraphTheory.sln
 script:
-  - dotnet restore
-  - dotnet test
+  - dotnet build -c Release
+  - dotnet test -c Release
