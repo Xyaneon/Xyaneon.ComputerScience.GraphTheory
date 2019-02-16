@@ -180,7 +180,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
                 return true;
             }
 
-            return vertex1.Equals(vertex2);
+            return !vertex1.Equals(vertex2);
         }
 
         #endregion // End operators region.

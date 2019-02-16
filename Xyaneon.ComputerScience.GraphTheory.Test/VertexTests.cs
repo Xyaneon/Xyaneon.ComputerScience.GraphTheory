@@ -46,6 +46,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             // Assert.
             Assert.AreNotSame(vertex1, vertex2);
             Assert.AreEqual(vertex1, vertex2);
+            Assert.IsTrue(vertex1 == vertex2);
+            Assert.IsFalse(vertex1 != vertex2);
         }
 
         /// <summary>
@@ -68,6 +70,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             // Assert.
             Assert.AreNotSame(vertex1, vertex2);
             Assert.AreNotEqual(vertex1, vertex2);
+            Assert.IsFalse(vertex1 == vertex2);
+            Assert.IsTrue(vertex1 != vertex2);
         }
     }
 }

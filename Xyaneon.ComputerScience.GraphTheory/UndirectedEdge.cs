@@ -247,7 +247,7 @@ namespace Xyaneon.ComputerScience.GraphTheory
                 return true;
             }
 
-            return edge1.Equals(edge2);
+            return !edge1.Equals(edge2);
         }
 
         #endregion // End operators region.

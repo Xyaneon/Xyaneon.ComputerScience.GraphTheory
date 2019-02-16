@@ -89,6 +89,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             // Assert.
             Assert.AreNotSame(edge1, edge2);
             Assert.AreEqual(edge1, edge2);
+            Assert.IsTrue(edge1 == edge2);
+            Assert.IsFalse(edge1 != edge2);
         }
 
         /// <summary>
@@ -121,6 +123,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             // Assert.
             Assert.AreNotSame(edge1, edge2);
             Assert.AreEqual(edge1, edge2);
+            Assert.IsTrue(edge1 == edge2);
+            Assert.IsFalse(edge1 != edge2);
         }
 
         /// <summary>
@@ -153,6 +157,8 @@ namespace Xyaneon.ComputerScience.GraphTheory.Tests
             // Assert.
             Assert.AreNotSame(edge1, edge2);
             Assert.AreNotEqual(edge1, edge2);
+            Assert.IsFalse(edge1 == edge2);
+            Assert.IsTrue(edge1 != edge2);
         }
 
         /// <summary>
