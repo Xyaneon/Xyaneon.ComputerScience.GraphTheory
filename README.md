@@ -1,6 +1,7 @@
 # Xyaneon.ComputerScience.GraphTheory
 
 [![NuGet](https://img.shields.io/nuget/v/Xyaneon.ComputerScience.GraphTheory.svg?style=flat)](https://www.nuget.org/packages/Xyaneon.ComputerScience.GraphTheory/)
+[![Build Status](https://travis-ci.com/Xyaneon/Xyaneon.ComputerScience.GraphTheory.svg?branch=master)](https://travis-ci.com/Xyaneon/Xyaneon.ComputerScience.GraphTheory)
 
 A .NET Standard library which provides classes for working with vertices, edges and graphs.
 
