@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added the IEdge interface for edge classes to implement, including the
   IsSelfLoop read-only property.
 
+### Fixed
+- Fixed the `!=` operator for vertex and edge classes.
+
 ## [2.0.0] - 2018-12-18
 ### Changed
 - Weighted edges now use the double type for weights instead of int.
