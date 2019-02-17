@@ -12,13 +12,17 @@
     <Company>Christopher Kyle Horton</Company>
     <Description>A .NET Standard library which provides classes for working with vertices, edges and graphs.</Description>
     <PackageTags>graph graph-theory vertex edge directed undirected computer science</PackageTags>
-    <PackageReleaseNotes>## 2.0.0 - 2018-12-18
-### Changed
-- Weighted edges now use the double type for weights instead of int.
-- A generic vertex type is now used for edges and graphs.</PackageReleaseNotes>
-    <AssemblyVersion>2.0.0.0</AssemblyVersion>
-    <FileVersion>2.0.0.0</FileVersion>
-    <Version>2.0.0</Version>
+    <PackageReleaseNotes>## 2.1.0 - 2019-02-16
+### Added
+- Added the IEdge interface for edge classes to implement, including the
+  IsSelfLoop read-only property.
+- Added an icon for the NuGet package.
+
+### Fixed
+- Fixed the != operator for vertex and edge classes.</PackageReleaseNotes>
+    <AssemblyVersion>2.1.0.0</AssemblyVersion>
+    <FileVersion>2.1.0.0</FileVersion>
+    <Version>2.1.0</Version>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
