@@ -5,6 +5,7 @@
     <Copyright>Copyright © Christopher Kyle Horton 2018-2019</Copyright>
     <PackageLicenseUrl>https://github.com/Xyaneon/Xyaneon.ComputerScience.GraphTheory/blob/master/LICENSE.txt</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Xyaneon/Xyaneon.ComputerScience.GraphTheory</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Xyaneon/Xyaneon.ComputerScience.GraphTheory/master/icon.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/Xyaneon/Xyaneon.ComputerScience.GraphTheory</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Authors>Christopher Kyle Horton</Authors>
