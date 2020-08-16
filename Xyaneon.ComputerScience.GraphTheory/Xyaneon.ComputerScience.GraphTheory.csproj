@@ -28,11 +28,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Users\chris\source\repos\Xyaneon.ComputerScience.GraphTheory\Xyaneon.ComputerScience.GraphTheory\Xyaneon.ComputerScience.GraphTheory.xml</DocumentationFile>
+    <DocumentationFile>.\Xyaneon.ComputerScience.GraphTheory.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>C:\Users\chris\source\repos\Xyaneon.ComputerScience.GraphTheory\Xyaneon.ComputerScience.GraphTheory\Xyaneon.ComputerScience.GraphTheory.xml</DocumentationFile>
+    <DocumentationFile>.\Xyaneon.ComputerScience.GraphTheory.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>
